@@ -1,63 +1,57 @@
-class User {
+<?php
+
+class Boat {
     protected $id;
-    protected $pseudo;
-    protected $bio;
-    protected $avatar;
-    protected $age;
-    protected $mail;
-    protected $password;
+    protected $type;
+    protected $size;
+    protected $position;
+    protected $grid_id;
     
-    function __construct(string $pseudo,string $bio, $avatar, $age, string $mail, string $password, int $id = NULL) {
-        $this->pseudo = $pseudo;
-        $this->bio = $bio;
-        $this->avatar = $avatar;
-        $this->age = $age;
-        $this->mail = $mail;
-        $this->password = $password;
+    function __construct(string $type, int $size, int $position, $grid_id, int $id = NULL) {
         $this->id = $id;
+        $this->type = $type;
+        $this->size = $size;
+        $this->position = $position;
+        $this->grid_id = $grid_id;
     }
-    function getId() {
+    function getGrid_id() {
+        return $this->grid_id;
+    }
+
+    function setGrid_id($grid_id) {
+        $this->grid_id = $grid_id;
+    }
+
+        function getId() {
         return $this->id;
+    }
+
+    function getType() {
+        return $this->type;
+    }
+
+    function getSize() {
+        return $this->size;
+    }
+
+    function getPosition() {
+        return $this->position;
     }
 
     function setId($id) {
         $this->id = $id;
     }
 
-        function getPseudo() {
-        return $this->pseudo;
+    function setType($type) {
+        $this->type = $type;
     }
-    function getBio() {
-        return $this->bio;
+
+    function setSize($size) {
+        $this->size = $size;
     }
-    function getAvatar() {
-        return $this->avatar;
+
+    function setPosition($position) {
+        $this->position = $position;
     }
-    function getAge() {
-        return $this->age;
+
     }
-    function getMail() {
-        return $this->mail;
-    }
-    function getPassword() {
-        return $this->password;
-    }
-    function setPseudo($pseudo) {
-        $this->pseudo = $pseudo;
-    }
-    function setBio($bio) {
-        $this->bio = $bio;
-    }
-    function setAvatar($avatar) {
-        $this->avatar = $avatar;
-    }
-    function setAge($age) {
-        $this->age = $age;
-    }
-    function setMail($mail) {
-        $this->mail = $mail;
-    }
-    function setPassword($password) {
-        $this->password = $password;
-    }
-}

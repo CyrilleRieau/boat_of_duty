@@ -30,7 +30,7 @@
             height: 40px;
             width: 40px;
             text-align: center;
-            size: 0.8em;
+            font-size: 0.8em;
             border: 1px solid black;
         }
     </style>
@@ -130,6 +130,7 @@
         callback: function(){ 
 
 let td = document.querySelectorAll("#table1 td");
+let tablepos = [];
 //console.log(td);
 for(let i=0;i<td.length;i++){        
 td[i].addEventListener('click', function(event){
@@ -138,14 +139,14 @@ td[i].addEventListener('click', function(event){
       td[i].style.backgroundColor = null;
     } else {
         td[i].style.backgroundColor = 'red';
-
-        console.log(td[i].id);
+        tablepos.push(td[i].id);
     }
 });};}});
 
 makeTable({
        callback: function(){ 
            let td2 = document.querySelectorAll("#table2 td");
+           let table2pos = [];
 //console.log(td2);
 for(let i=0;i<td2.length;i++){
 td2[i].addEventListener('click', function(){
@@ -153,7 +154,7 @@ td2[i].addEventListener('click', function(){
         td2[i].style.backgroundColor = null;
     } else {
         td2[i].style.backgroundColor = 'blue';
-        console.log(td2[i].id);
+        table2pos.push(td2[i].id);
     }});};}});
 
                // }        })
