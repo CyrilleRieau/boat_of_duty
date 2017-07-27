@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+ <!--<script src="ajax.js"></script>-->
+ <script src="script/functions.js"></script>
     <title>Bataille Navale</title>
-    <script src="ajax.js"></script>
-    <style>
+   <style>
         table {
             border: 1px solid black;
             height: 400px;
@@ -30,7 +30,6 @@
             height: 40px;
             width: 40px;
             text-align: center;
-            font-size: 0.8em;
             border: 1px solid black;
         }
     </style>
@@ -50,8 +49,18 @@
         </div>
     </div>
     <script>
-        makeTable({
-            callback: function() {
+        
+        let boat = {
+            id:'' ,
+            type: '',
+            size: '',
+            position: '',
+            grid_id: '',
+            isActive : true
+        }
+        makeTable(1);
+        /*makeTable({
+          //  callback: function() {
 
                 let table = document.querySelector('#table1');
                 for (let i = 0; i < 10; i++) {
@@ -87,8 +96,8 @@
                             line.style.backgroundColor = '#F8AFF6';
                         }
 */
-
-        makeTable({
+makeTable(2);
+       /* makeTable({
         callback: function(){ 
 
               let table2 = document.querySelector('#table2');
@@ -103,7 +112,7 @@
                     }
                 };
             }});
-  /*                      if (line.innerHTML > 0 && line.innerHTML <= 10) {
+                        if (line.innerHTML > 0 && line.innerHTML <= 10) {
                             line.style.backgroundColor = '#FFE3DD';
                         } else if (line.innerHTML > 10 && line.innerHTML <= 20) {
                             line.style.backgroundColor = '#F3BEB2';
@@ -124,9 +133,11 @@
                         } else if (line.innerHTML > 90 && line.innerHTML <= 100) {
                             line.style.backgroundColor = '#F8AFF6';
                         }
-                    */
-
-        makeTable({
+                    
+*/
+position(1);
+/*
+    makeTable({
         callback: function(){ 
 
 let td = document.querySelectorAll("#table1 td");
@@ -140,9 +151,13 @@ td[i].addEventListener('click', function(event){
     } else {
         td[i].style.backgroundColor = 'red';
         tablepos.push(td[i].id);
+        console.log(tablepos);
     }
 });};}});
+*/
+position(2);
 
+/*
 makeTable({
        callback: function(){ 
            let td2 = document.querySelectorAll("#table2 td");
@@ -155,10 +170,11 @@ td2[i].addEventListener('click', function(){
     } else {
         td2[i].style.backgroundColor = 'blue';
         table2pos.push(td2[i].id);
+        console.log(table2pos);
     }});};}});
 
                // }        })
-    </script>
+ */   </script>
 </body>
 
 </html>

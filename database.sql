@@ -8,7 +8,8 @@ CREATE TABLE `boats` (
     `id`        INT AUTO_INCREMENT PRIMARY KEY,
     `type`      VARCHAR(64) NOT NULL,
     'size'      INT NOT NULL, 
-    'position'  INT NOT NULL
+    'position'  INT NOT NULL,
+    'isActive'  BOOL
 );
 
 CREATE TABLE `grid` (
