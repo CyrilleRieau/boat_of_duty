@@ -61,7 +61,10 @@
                         let line = document.createElement('td');
                         row.appendChild(line);
                         line.innerHTML = i * 10 + (v + 1);
-                        line.id = 'td'+(i * 10 + (v + 1));
+                        line.id = 'td1.'+(i * 10 + (v + 1));
+                    }
+                };
+            }});
                         /*if (line.innerHTML > 0 && line.innerHTML <= 10) {
                             line.style.backgroundColor = '#FFE3DD';
                         } else if (line.innerHTML > 10 && line.innerHTML <= 20) {
@@ -84,22 +87,22 @@
                             line.style.backgroundColor = '#F8AFF6';
                         }
 */
-                    }
-                }
-            }
-        });
 
         makeTable({
-            callback: function() {
+        callback: function(){ 
 
-                let table = document.querySelector('#table2');
+              let table2 = document.querySelector('#table2');
                 for (let i = 0; i < 10; i++) {
                     let row = document.createElement('tr');
-                    table.appendChild(row);
+                    table2.appendChild(row);
                     for (let v = 0; v < 10; v++) {
                         let line = document.createElement('td');
                         row.appendChild(line);
                         line.innerHTML = i * 10 + (v + 1);
+                        line.id = 'td2.'+(i * 10 + (v + 1));
+                    }
+                };
+            }});
   /*                      if (line.innerHTML > 0 && line.innerHTML <= 10) {
                             line.style.backgroundColor = '#FFE3DD';
                         } else if (line.innerHTML > 10 && line.innerHTML <= 20) {
@@ -121,29 +124,39 @@
                         } else if (line.innerHTML > 90 && line.innerHTML <= 100) {
                             line.style.backgroundColor = '#F8AFF6';
                         }
-                    */}
-                }
-            }
-        });
+                    */
 
-        //makeTable({
-        //callback: function(){ 
-         for (let i = 1; i<=100; i++) {
-document.querySelector("#table1[tr[td"+i+"]]").addEventListener('click', function(){
-    if (document.querySelector("tr> #td"+i).style.backgroundColor == 'red'){
-        document.querySelector("tr> #td"+i).style.backgroundColor = null;
+        makeTable({
+        callback: function(){ 
+
+let td = document.querySelectorAll("#table1 td");
+//console.log(td);
+for(let i=0;i<td.length;i++){        
+td[i].addEventListener('click', function(event){
+    event.preventDefault();
+    if (td[i].style.backgroundColor == 'red'){
+      td[i].style.backgroundColor = null;
     } else {
-        document.querySelector("tr> #td"+i).style.backgroundColor = 'red';
+        td[i].style.backgroundColor = 'red';
+
+        console.log(td[i].id);
     }
-});}
-document.querySelector('#table2 tr>td').addEventListener('click', function(){
-    if (document.querySelector('#table2 tr>td').style.backgroundColor == 'blue'){
-        document.querySelector('#table2 tr>td').style.backgroundColor = null;
+});};}});
+
+makeTable({
+       callback: function(){ 
+           let td2 = document.querySelectorAll("#table2 td");
+//console.log(td2);
+for(let i=0;i<td2.length;i++){
+td2[i].addEventListener('click', function(){
+    if (td2[i].style.backgroundColor == 'blue'){
+        td2[i].style.backgroundColor = null;
     } else {
-        document.querySelector('#table2 tr>td').style.backgroundColor = 'blue';
-    }
-});
-         //       }        })
+        td2[i].style.backgroundColor = 'blue';
+        console.log(td2[i].id);
+    }});};}});
+
+               // }        })
     </script>
 </body>
 
